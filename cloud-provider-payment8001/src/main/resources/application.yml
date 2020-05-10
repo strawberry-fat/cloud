@@ -25,8 +25,12 @@ eureka:
     fetch-registry: true
     service-url:
       #设置 Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址
-      #defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/ #Eureka集群
+      defaultZone: http://localhost:7001/eureka
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/ #Eureka集群
   instance:
     instance-id: payment8001
     prefer-ip-address: true
+    #Eurake客户端想服务端发送心跳的时间间隔，单位为秒
+    lease-renewal-interval-in-seconds: 1
+    #Eureka服务端在收到最后一次心跳后的等待时间，单位为秒，超时剔除服务
+    lease-expiration-duration-in-seconds: 2
