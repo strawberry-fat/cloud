@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumerzk-service   #zookeeper中的application名称
+  cloud:
+    zookeeper:
+      connect-string: 134.175.25.48:2181
